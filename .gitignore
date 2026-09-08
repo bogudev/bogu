@@ -1,0 +1,29 @@
+# Local environments and secrets
+.venv/
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+
+# Python caches and build outputs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+tmp/
+
+# Personal reference material (not part of the open-source project)
+/personal/
+
+# Local models and generated demo output
+*.gguf
+hackathon/demo/**/report-restored.txt
+hackathon/demo/**/analysis-restored.txt
+hackathon/demo/**/handoff-restored.txt
+
+# Operating-system files
+.DS_Store

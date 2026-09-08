@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bogu"
+version = "0.1.0"
+description = "Bogu: a local privacy layer for AI workflows"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["privacy", "pii", "llm", "redaction", "anonymization"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/bogudev/bogu"
+Repository = "https://github.com/bogudev/bogu"
+Issues = "https://github.com/bogudev/bogu/issues"
+Changelog = "https://github.com/bogudev/bogu/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+ner-spacy = [
+    "spacy>=3.7,<4.0",
+]
+ner-hf = [
+    "transformers>=4.40,<5.0",
+    "torch>=2.0",
+]
+advanced = [
+    "llama-cpp-python>=0.2.0",
+]
+adapters = [
+    "pdfplumber>=0.10",
+    "python-docx>=1.1",
+    "pandas>=2.0",
+]
+proxy = [
+    "openai>=1.0",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov",
+    "mypy>=1.9",
+    "ruff>=0.4",
+]
+all = [
+    "bogu[ner-spacy,ner-hf,advanced,adapters,proxy]",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bogu"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "llm: marks tests requiring a local GGUF model",
+]
+
+[tool.ruff]
+src = ["src"]
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["llama_cpp", "opf", "pandas", "spacy", "transformers"]
+ignore_missing_imports = true

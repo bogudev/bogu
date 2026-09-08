@@ -59,7 +59,7 @@ def test_openai_privacy_filter_maps_every_supported_label() -> None:
 
         def redact(self, text: str) -> FakeResult:
             spans = []
-            for label, value in zip(labels, text.split("|"), strict=True):
+            for label, value in zip(labels, text.split("|")):
                 start = text.index(value)
                 spans.append(FakeSpan(label, start, start + len(value), value))
             return FakeResult(tuple(spans))

@@ -83,5 +83,5 @@ select = ["E", "F", "I", "UP"]
 strict = true
 
 [[tool.mypy.overrides]]
-module = ["llama_cpp", "opf", "pandas", "spacy", "transformers"]
+module = ["docx", "llama_cpp", "opf", "pandas", "pdfplumber", "spacy", "transformers"]
 ignore_missing_imports = true

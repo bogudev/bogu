@@ -7,6 +7,8 @@ Requires a GGUF model file. Pass it with:
 All tests are skipped if --model-path is not provided.
 """
 
+from __future__ import annotations
+
 import pytest
 
 from bogu import EntityType

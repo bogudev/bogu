@@ -72,11 +72,17 @@ has passed.
 
 - [ ] Create separate accounts on TestPyPI and PyPI and enable two-factor
       authentication.
-- [ ] Upload the candidate to TestPyPI manually for the first rehearsal:
+- [ ] Configure a pending TestPyPI Trusted Publisher with these values:
 
-  ```bash
-  python -m twine upload --repository testpypi dist/*
-  ```
+      - Project: `bogu`
+      - Owner: `bogudev`
+      - Repository: `bogu`
+      - Workflow: `test-pypi.yml`
+      - Environment: leave blank
+
+- [ ] Run the `Publish to TestPyPI` workflow manually from GitHub Actions. It
+      builds, verifies, and uploads the candidate using short-lived OIDC
+      credentials instead of an API token.
 
 - [ ] Install from TestPyPI in a clean environment. Use `--no-deps` for the
       dependency-free core, because optional dependencies may not exist there:

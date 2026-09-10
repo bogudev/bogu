@@ -6,6 +6,8 @@ All notable changes to Bogu will be documented in this file. The format follows
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-09-10
+
 ### Added
 
 - Local PII detection and reversible pseudonymization.
@@ -14,7 +16,3 @@ All notable changes to Bogu will be documented in this file. The format follows
 - Explicit in-memory Bogu sessions with clear and export operations.
 - Optional document, dataset, NER, local LLM, and OpenAI-compatible adapters.
 - Composable local pre- and post-processing hooks.
-
-## [0.1.0] - Unreleased
-
-Initial public release candidate.

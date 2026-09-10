@@ -23,14 +23,14 @@ has passed.
       versions, and the security disclaimer.
 - [x] Move reference documents and hackathon work under ignored `personal/` so
       they remain available locally but are absent from public distributions.
-- [ ] Search the complete Git history and working tree for credentials, private
+- [x] Search the complete Git history and working tree for credentials, private
       data, generated reports, local paths, and internal names.
 - [x] Add `CONTRIBUTING.md`, `SECURITY.md`, and a code of conduct before inviting
       external contributors.
 
 ## 2. Package readiness
 
-- [ ] Decide whether `0.1.0` is the intended first public version. PyPI releases
+- [x] Decide whether `0.1.0` is the intended first public version. PyPI releases
       are immutable; a filename/version cannot be overwritten.
 - [x] Keep OpenAI Privacy Filter outside package dependencies until OPF has a
       PyPI release. Public indexes may reject direct URL dependencies.
@@ -59,7 +59,7 @@ has passed.
   tar -tzf dist/*.tar.gz
   ```
 
-- [ ] Install the wheel into a new environment and run a smoke test:
+- [x] Install the wheel into a new environment and run a smoke test:
 
   ```bash
   python -m venv /tmp/bogu-release-test
@@ -97,7 +97,7 @@ has passed.
 - [x] Give only the publish job `id-token: write` permission.
 - [ ] Create a protected GitHub environment named `pypi` and require manual
       approval for production publishing.
-- [ ] Configure a pending or existing PyPI Trusted Publisher with the exact
+- [x] Configure a pending or existing PyPI Trusted Publisher with the exact
       GitHub owner, repository, workflow filename (`release.yml`), and `pypi`
       environment.
 

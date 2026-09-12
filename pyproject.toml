@@ -38,7 +38,7 @@ ner-spacy = [
     "spacy>=3.7,<4.0",
 ]
 ner-hf = [
-    "transformers>=4.40,<5.0",
+    "transformers>=4.40,<6.0",
     "torch>=2.0",
 ]
 advanced = [
